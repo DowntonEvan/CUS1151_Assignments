@@ -1,3 +1,5 @@
+package cus1151_hm1;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,10 +30,16 @@ public class QueueTest {
 
 	public static void main(String[] args){
 
-		testEmpty(new ListQueue(),new JavaQueue());
-		testOne(new ListQueue(),new JavaQueue());
-		testMany(new ListQueue(),new JavaQueue());
-			
+		//testEmpty(new ListQueue(),new JavaQueue());
+		//testOne(new ListQueue(),new JavaQueue());
+		//testMany(new ListQueue(),new JavaQueue());
+		
+		ListQueue q = new ListQueue("first Value");
+		q.enqueue("second Value");
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.front());
+		
 	}
 	
 	public static boolean testEmpty(ListQueue yourQueue, JavaQueue correctQueue){
