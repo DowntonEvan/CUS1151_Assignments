@@ -6,6 +6,14 @@ public class ListQueue {
 	private class Node{
 		public String Value = null;
 		public Node next = null;
+        public Node(String setValue){
+            Value=setValue;
+        }
+        public Node(String setValue, Node setNextNode){
+            Value=setValue;
+            next = setNextNode;
+            ejfpsdj
+        }
 		//TODO Implement Linked List Node; DONE
 	}
 	
