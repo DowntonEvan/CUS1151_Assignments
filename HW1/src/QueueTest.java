@@ -1,5 +1,3 @@
-package cus1151_hm1;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -30,22 +28,19 @@ public class QueueTest {
 
 	public static void main(String[] args){
 
-		//testEmpty(new ListQueue(),new JavaQueue());
+		if(testEmpty(new ListQueue(),new JavaQueue())){ //Tests if an empty java queue is the same as our queue
+			System.out.println("The two Queues are the same");
+		}
 		//testOne(new ListQueue(),new JavaQueue());
 		//testMany(new ListQueue(),new JavaQueue());
-		
-		ListQueue q = new ListQueue("first Value");
-		q.enqueue("second Value");
-		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
-		System.out.println(q.front());
 		
 	}
 	
 	public static boolean testEmpty(ListQueue yourQueue, JavaQueue correctQueue){
-		//TODO implement a test of the three functions when the queues are empty
-		//Compare the result of your queue  against the java implementation
-		return false;
+			if(yourQueue.front() != correctQueue.front()) { //Tests to see if the the empty queues are equal
+				return false;
+			}
+			return true; //If the code makes it to this point then the queues were the same at all points.
 	}
 	
 	public static boolean testOne(ListQueue a, JavaQueue b){
