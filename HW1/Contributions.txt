@@ -18,3 +18,7 @@ Daniel Li (2/29/20)
     -Implemented testOne test
     -Updated .enqueue() and .dequeue() methods to run properly
     -Organized some code in ListQueue.java and QueueTest.java
+Evan Downton (3/1/20)
+    -Updated and unified testEmpty Method
+    -implemented testMany method
+    -Made output text easier to read
