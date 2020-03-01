@@ -10,7 +10,11 @@ George Stephanoff (2/18/20)
 Evan Downton (2/25/20)
     -Added constructors, getters, setters to Node class
     -(IntelliJ adds the .idea directory and .iml Files, i could remove it and everything would likely work, but its going to continue to re-add them, ill look into making Git ignore these files)
-    -Redid the Enque, Deque, Front methods to include new constructors and geters/seters
+    -Redid the Enqueue, Dequeue, Front methods to include new constructors and geters/seters
 Evan Downton (2/28/20)
     -Implemented testEmpty test
     -Added Default Constructor to ListQueue
+Daniel Li (2/29/20)
+    -Implemented testOne test
+    -Updated .enqueue() and .dequeue() methods to run properly
+    -Organized some code in ListQueue.java and QueueTest.java

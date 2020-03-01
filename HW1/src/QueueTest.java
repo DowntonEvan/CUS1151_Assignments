@@ -28,10 +28,23 @@ public class QueueTest {
 
 	public static void main(String[] args){
 
+    	//Both queues are empty
+		System.out.println("EMPTY QUEUE TEST");
 		if(testEmpty(new ListQueue(),new JavaQueue())){ //Tests if an empty java queue is the same as our queue
 			System.out.println("The two Queues are the same");
 		}
-		//testOne(new ListQueue(),new JavaQueue());
+
+		//Both queues starting with 1 element
+		ListQueue q = new ListQueue("Zeta");
+		JavaQueue j = new JavaQueue();
+		j.enqueue("Zeta");
+
+		System.out.println("ONE ELEMENT QUEUE TEST");
+		if(testOne(q, j))
+			System.out.println("Both Queues are the same.");
+		else
+			System.out.println("Both Queues are not the same.");
+
 		//testMany(new ListQueue(),new JavaQueue());
 		
 	}
@@ -44,8 +57,19 @@ public class QueueTest {
 	}
 	
 	public static boolean testOne(ListQueue a, JavaQueue b){
-		//TODO implement a test of the three functions when the queues have one element
-		//Compare the result of your queue  against the java implementation
+		//Test each of the 3 functions (enqueue, dequeue, front)
+		//System.out.println(b.queue.size());
+		if(a.first == a.last && b.queue.size() == 1){	//If the ListQueue has 1 element [First & Last Nodes are the Same]
+			a.enqueue("Test");					//And the JavaQueue has 1 element [Queue Size Method]
+			b.enqueue("Test");					//Testing if .enqueue() works
+			if(a.front() == b.front()){				//Testing if enqueue values are the same & .front() works
+				if(a.dequeue() == b.dequeue())	{	//Testing if dequeue values are the same & .dequeue() works
+					if(a.front() == b.front()){		//Testing if .front() values for both queues are the same at the end
+						return true;				//All 3 functions work + Both Queues contain only 1 element
+					}
+				}
+			}
+		}
 		return false;
 	}
 	
