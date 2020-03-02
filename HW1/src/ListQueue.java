@@ -1,8 +1,8 @@
 public class ListQueue {
 
     private class Node {
-        private String value;
-        private Node next;
+        String value;
+        Node next;
 
         public Node() {  //Default constructor for creating a Node with *NO* values (Java was not wanting to create a default constructor here, unsure why)
             value = null;

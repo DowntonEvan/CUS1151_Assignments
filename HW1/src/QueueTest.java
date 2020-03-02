@@ -35,7 +35,6 @@ public class QueueTest {
         //Both queues are empty
         System.out.println("EMPTY QUEUE TEST");
         testEmpty(new ListQueue(), new JavaQueue()); //Tests if an empty java queue is the same as our queue
-
         //Both queues starting with 1 element
         ListQueue list = new ListQueue("Zeta");
         JavaQueue java = new JavaQueue();
@@ -52,18 +51,23 @@ public class QueueTest {
         java2.enqueue("Demo2");
         list2.enqueue("Demo3");
         java2.enqueue("Demo3");
-        testMany(list2 ,java2);
+        testMany(list2, java2);
 
     }
 
     public static boolean testEmpty(ListQueue yourQueue, JavaQueue correctQueue) {
+        //System.out.println(correctQueue.queue.size());
+        if (yourQueue.first != null || correctQueue.queue.size() != 0) {//Checks if both queues are empty
+            System.out.println("Both queues are not empty");            //yourQueue: first node is null
+            return false;                                               //correctQueue: queue.size() == 0
+        }
         if (yourQueue.front() != correctQueue.front()) { //Tests to see if the the empty queues are equal
             System.out.println("Both queues are not the same");
             return false;
         }
         yourQueue.enqueue("test");              //Tests to see if queues remain the same even after insertion
         correctQueue.enqueue("test");               //Effectively this is here to test enqueue and dequeue methods
-        if(yourQueue.dequeue() != correctQueue.dequeue()){
+        if (yourQueue.dequeue() != correctQueue.dequeue()) {
             System.out.println("Both queues are not the same");
             return false;
         }
@@ -93,21 +97,26 @@ public class QueueTest {
     }
 
     public static boolean testMany(ListQueue a, JavaQueue b) {
+        if (a.last == null || b.queue.size() <= 1) { //Checks if both queues have more than 1 element
+            System.out.println("Both queues don't contain more than 1 element");     //a: last node is null
+            return false;                                                             //b: queue.size() > 1
+        }
+
         a.enqueue("Demo4"); //These two lines serve to test the enqueue function
         b.enqueue("Demo4"); //Both queues are now set up and can be tested
 
-        while(a.front() != null){ //This loop checks to make sure that all the contents of the two arrays match
-            if(b.front() == null){ //If b's front returns a null value it means the length of the two queues are different and therefore are not the same
+        while (a.front() != null) { //This loop checks to make sure that all the contents of the two arrays match
+            if (b.front() == null) { //If b's front returns a null value it means the length of the two queues are different and therefore are not the same
                 System.out.println("The queues are not the same"); //Placing this check before the next prevents an error form being thrown from trying to dequeue a non existent value
                 return false;
             }
-            if(a.dequeue() != b.dequeue()){ //If the contents of the first value in each queue are different than they are not the same and the method returns
+            if (a.dequeue() != b.dequeue()) { //If the contents of the first value in each queue are different than they are not the same and the method returns
                 System.out.println("The queues are not the same");
                 return false;
             }
         }
 
-        if(b.front() != null){ //If there is still a value in B after clearing out A than B has a different length than A and is inherently different and not the same
+        if (b.front() != null) { //If there is still a value in B after clearing out A than B has a different length than A and is inherently different and not the same
             System.out.println("The two queues are not the same");
             return false;
         }

@@ -22,3 +22,5 @@ Evan Downton (3/1/20)
     -Updated and unified testEmpty Method
     -implemented testMany method
     -Made output text easier to read
+Daniel Li (3/1/20)
+    -Added more tests to testEmpty and testMany methods
