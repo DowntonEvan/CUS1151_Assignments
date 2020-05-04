@@ -14,14 +14,17 @@ class BST{
         Node l;
         Node r;
 
-        private Node(String k){
+        private Node(String k){ /**Done*/
         	// TODO Instantialize a new Node with keyword k.
+            keyword = k;
         }
 
-        private void update(Record r){
+        private void update(Record r){ /**Done*/
         	//TODO Adds the Record r to the linked list of records. 
         	// You do not have to check if the record is already in the list.
         	//HINT: Add the Record r to the front of your linked list.
+            r.next = record;
+            record = r;
         }
     }
 
@@ -41,7 +44,7 @@ class BST{
     	// if a particular keyword exists in the BST
     }
 
-	public Record get_records(String keyword){
+    public Record get_records(String keyword){
         //TODO Returns the first record for a particular keyword. 
     	// This record will link to other records
     	// If the keyword is not in the BST, it should return null.

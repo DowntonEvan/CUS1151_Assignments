@@ -8,7 +8,7 @@ public class Record{
     String author;
     Record next;
 
-    Record(int i, String t, String a, Record r){
+    public Record(int i, String t, String a, Record r){
         this.id = i;
         this.title = t;
         this.author = a;

@@ -1,0 +1,3 @@
+Evan Downton
+    -Fixed minor syntax issues within the test.java class
+    -Added BST Node Constructor and update classes

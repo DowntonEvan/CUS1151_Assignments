@@ -16,7 +16,7 @@ class FileData{
  *  title : contains the title of the paper
  *  author: contains the author of the paper
  *  keywords is an array of all keywords related to that paper.
- */ 
+ */
 
 	int id;
 	String title;
@@ -81,7 +81,7 @@ class Test{
 					readData.addKeyword(b.readLine());
 				}
 				String space = b.readLine();
-				if((space! = null)&&(!space.trim().equals(""))){
+				if((space!= null)&&(!space.trim().equals(""))){
 					System.out.println("Error in file format");
 					return null;
 				}
@@ -125,6 +125,7 @@ class Test{
     }
 
 
+
     public static void main(String[] args){
 
             Test T = new Test("datafile.txt"); 	// THIS WILL CREATE YOUR BST AND FILL IT 
@@ -132,8 +133,8 @@ class Test{
             
             /* This line of code should return the first record in the linked list for 
              * a given keyword.
-             * It may be useful for your personal debugging
-             */ 
+             * It may be useful for your personal debugging*/
+
             T.a.get_records("medical" /*Insert keyword to be found here. "medical" is an example*/).print();
             
             T.a.print(); // Prints titles of all elements in the BST sorted by keyword.
@@ -146,3 +147,5 @@ class Test{
             // THIS AREA IS FOR YOUR USE TO HELP TEST THAT YOUR BST WORKS
     }
 }
+
+
