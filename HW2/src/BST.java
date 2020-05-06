@@ -143,22 +143,28 @@ class BST{
     	
     	
     }
-    
+
     public void delete(String keyword){ /**Still working on it- Daniel **/
     	//TODO Write a recursive function which removes the Node with keyword 
     	// from the binary search tree.
     	// You may not use lazy deletion and if the keyword is not in the BST, 
     	// the function should do nothing.
-        if(root == null){ //If the BST is empty, returns a negative
-            return false;
-        }
-        //Needs to account for where the node is being deleted. WIP
-        if(contains(keyword)){ //If the tree isn't empty we can check to see if the keyword already exists, if so we need to delete that node and transfer the node up
-            root = root.l;
+        if(root == null) { //If the BST is empty, returns a negative
             return;
         }
-    	
-    	
+        Node theRoot = root; //Stores the original root in-case
+        if(contains(keyword)){ //If the keywords exists, we need to delete that node and transfer the child node up
+            root = found; //Sets the root to the node found using "contains"
+            if(root.r == null){ //If the deleted node has 0 or 1 child,
+                root = root.l;  //Works in both cases. root.l is empty with 0 children, and root.l replaces root with 1 child
+            }
+            else{   //If the deleted node has 2 children, replace the deleted node with the right child
+                Node replace = root.r;  //Stores the value of the right child of the deleted node
+                root.r = null;  //Moves the right child of the deleted node
+                root = replace; //Gives the replaced node the values of the old right child
+            }
+            return;
+        }
     }
 
     public void print(){
