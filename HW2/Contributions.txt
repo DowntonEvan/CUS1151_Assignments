@@ -3,3 +3,6 @@ Evan Downton
     -Added BST Node Constructor and update classes
     -Added BST contains class
     -Added BST insert class
+    
+George Stephanoff
+    -Added BST get_records function
