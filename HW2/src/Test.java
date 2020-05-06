@@ -128,22 +128,30 @@ class Test{
 
     public static void main(String[] args){
 
-            Test T = new Test("datafile.txt"); 	// THIS WILL CREATE YOUR BST AND FILL IT 
-            									// WITH THE INFORMATION FROM THE DATAFILE
+            Test T = new Test("E:/eclipse-workspace/CUS1185_hm2/src/datafile.txt"); //i needed to fill in the full directory because eclipse was complaining throws file not found	
+            // THIS WILL CREATE YOUR BST AND FILL IT 
+            // WITH THE INFORMATION FROM THE DATAFILE
             
             /* This line of code should return the first record in the linked list for 
              * a given keyword.
              * It may be useful for your personal debugging*/
-
-            T.a.get_records("medical" /*Insert keyword to be found here. "medical" is an example*/).print();
-            
+            System.out.println("Record Search by keyword");
+            System.out.println("--------------------------------");
+            T.a.get_records("classification-rules" /*Insert keyword to be found here. "medical" is an example*/).print();
+            System.out.println("--------------------------------");
+            System.out.println("Prints all of the nodes");
+            System.out.println("--------------------------------");
             T.a.print(); // Prints titles of all elements in the BST sorted by keyword.
-            
+            System.out.println("--------------------------------");
+            System.out.println("deletion");
+            System.out.println("--------------------------------");
             T.a.delete("medical");
             T.a.delete("learning");
             T.a.delete("concepts");
-            
+            System.out.println("Prints all of the nodes after deletion");
+            System.out.println("--------------------------------");
             T.a.print(); //Prints BST after the 3 deletions
+            
             // THIS AREA IS FOR YOUR USE TO HELP TEST THAT YOUR BST WORKS
     }
 }

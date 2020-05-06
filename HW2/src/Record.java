@@ -18,6 +18,7 @@ public class Record{
     public void print(){
     	System.out.println(this.title);
     	System.out.println(this.author);
+    	
     }
     
 

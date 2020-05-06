@@ -110,17 +110,51 @@ class BST{
         return false; //If at this point in execution the keyword was not found it is not present, false is returned
     }
 
-    public Record get_records(String keyword){
+    public Record get_records(String keyword){// Done: tested
         //TODO Returns the first record for a particular keyword. 
     	// This record will link to other records
     	// If the keyword is not in the BST, it should return null.
+    	Node  n = root;
+    	Record re = new Record(0, "record not found", "", null);//dummy record for not found
+    	while(n != null)// if the current node is null than we should not continue with the search
+    	{
+    		
+    		if(n.keyword.equals(keyword))
+    		{
+    			return n.record;
+    		}
+    		if(n.r == null && n.l == null)//if left and right are both null and our current node is not equal to the keyword than its not in the BST
+    		{
+    			return re;//can't return null because the Records.print causes a crash if its equal to null
+    		}
+    			
+	    	if(keyword.compareTo(n.r.keyword) > 0)
+	    	{
+	    	n = n.r;
+	    	}
+	    	else
+	   		{
+	   		n = n.l;
+	   		}
+    	}
+    	
+    	
+    	return re;
+    	
+    	
     }
 
+    
+    
+    
     public void delete(String keyword){
     	//TODO Write a recursive function which removes the Node with keyword 
     	// from the binary search tree.
     	// You may not use lazy deletion and if the keyword is not in the BST, 
     	// the function should do nothing.
+    	
+    	
+    	
     }
 
     public void print(){
@@ -128,7 +162,8 @@ class BST{
     }
 
     private void print(Node t){
-        if (t != null){
+        if (t != null)
+        {
             print(t.l);
             System.out.println(t.keyword);
             Record r = t.record;
