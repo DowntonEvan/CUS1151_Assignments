@@ -6,3 +6,6 @@ Evan Downton
     
 George Stephanoff
     -Added BST get_records function
+
+Daniel Li
+    -Added BST delete function
